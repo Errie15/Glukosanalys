@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENTION InBody Analys Kvinna</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/FRwbMSBN/SENTION-logo-Black-Transparent-BG.png">
+    <style>
+
+.header {
+    background: #ffffff;
+    width: 98%;           /* Ändrat från 1440px till 100% */
+    height: 82px;
+    color: #444444;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: static;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 15px 15px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 1rem;
+    font-weight: medium;
+    margin-bottom: 20px;
+}
+
+        /* Your existing styles here */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #F0EEEC;
+        }
+
+        .logo {
+    position: absolute; /* Position the logo absolutely */
+    top: 43px; /* Distance from the top of the page */
+    left: 500px; /* Distance from the left of the page */
+    width: auto; /* Set a fixed width for the logo */
+    height: 30px; /* Maintain aspect ratio */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    
+}
+        h1 {
+    font-size: 2rem;
+    color: #444444;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Verdana', sans-serif; /* Ändra till önskad font */
+    font-size: 2rem; /* Ändra storlek om det behövs */
+            font-weight: medium; /* Ändra tjocklek om det behövs */
+}
+
+.input-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.input-group {
+    position: relative;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.input-group input {
+    width: 180px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 16px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.input-group label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 0 5px;
+    color: #666;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -20px;
+    transform: translateY(0) scale(0.9);
+    background: white;
+    color: #333;
+}
+
+.content-container {
+    margin-top: 20px; /* Add space between inputs and the image/content */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 50px;
+}
+
+        .model-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 400px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-box {
+            max-width: 400px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #333;
+        }      
+
+        
+        .comment-container textarea {
+            width: 100%; /* Textarean tar upp hela bredden av sin container */
+            min-height: 50px; /* Minsta höjd som textarean kan krympa till */
+            height: 300px; /* Startstorlek */
+            resize: vertical; /* Tillåter endast vertikal storleksändring */
+            padding: 15px; /* Samma padding som i .text-box */
+            font-size: 0.9rem; /* Matchar textstorleken i .text-box */
+            line-height: 1.5; /* Matchar line-height i .text-box */
+            border: none; /* Tar bort kantlinjen */
+            border-radius: 15px; /* Rundar hörnen för att matcha designen */
+            box-sizing: border-box;
+            font-family: Arial, sans-serif; /* Matchar typsnittet i .text-box */
+            background: #fff; /* Samma bakgrundsfärg som .text-box */
+            color: #333; /* Samma textfärg som .text-box */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Samma skugga som i .text-box */
+            overflow: auto; /* Lägger till scrollbars om texten blir för stor */
+        }
+        
+    .circle {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        background: #d6d2ce; /* Default color */
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        transition: background-color 0.3s ease; /* Smooth color transition */
+    }
+
+    .circle .parameter {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .circle .value {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 5px; /* Add spacing between parameter and value */
+    }
+
+
+        .hidden-input {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            padding: 5px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            display: none; /* Hidden by default */
+            z-index: 10;
+        }
+
+        .circle input:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .circle.vikt {
+            top: 5%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle.längd {
+            top: 5%;
+            right: 20%;
+            transform: translate(50%, -50%);
+        }
+
+        .circle.muskelmassa {
+            top: 40%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle.muskelmassa:hover::after {
+            content: "Skriv in muskelmassa i kilo, uträkningen av procent sker automatiskt";
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            z-index: 10;
+        }
+
+        .circle.fettprocent {
+            top: 40%;
+            right: 10%;
+            transform: translate(50%, -50%);
+        }
+
+        .circle.ecw-ratio {
+            bottom: 25%;
+            left: 10%;
+            transform: translate(-50%, 50%);
+        }
+
+        .circle.bmi {
+            bottom: 25%;
+            right: 10%;
+            transform: translate(50%, 50%);
+        }
+
+        .circle.viceralt-fett {
+            bottom: 1%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+        }
+
+        .export-container {
+        margin-top: 20px;
+        text-align: center; /* Center the export button */
+        }
+
+        .export-container button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #d6d2ce;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px; /* Add spacing between buttons */
+}
+
+.export-container button:hover {
+    background-color: #b4aca4;
+}
+
+.footer-logo {
+    height: 100px;
+    width: auto;
+    position: relative;
+    bottom: -175px;
+    margin-left: 4500; /* Detta flyttar elementet till höger */
+    z-index: 999;
+    display: flex; /* Hjälper till med positioneringen */
+    justify-content: flex-end; /* Flyttar innehållet till höger */
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    height: 100px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+        @media print {
+    #export-button {
+        display: none; /* Dölj exportknappen vid utskrift */
+    }
+}
+    </style>
+</head>
+<body>
+    <body>
+        <div class="header">
+            <img src="https://i.postimg.cc/T1r2R8Ch/SENTION-text-black.png" alt="Logo" class="logo">
+            <h1>InBody Analys</h1>
+        </div>
+        <div class="input-container">
+            <div class="input-group">
+                <input type="text" id="nameInput" placeholder=" " required>
+                <label for="nameInput">Namn</label>
+            </div>
+            <div class="input-group">
+                <input type="text" id="personnummerInput" placeholder=" " required>
+                <label for="personnummerInput">Personnummer</label>
+            </div>
+            <div class="input-group">
+                <input type="date" id="dateInput" placeholder=" " required>
+                <label for="dateInput">Datum</label>
+            </div>
+        </div>
+    <div class="content-container">
+        <!-- Left Section: Model and Circles -->
+        <div class="model-container">
+            <img src="https://i.postimg.cc/sxBwthy1/Female-In-Body22.jpg" alt="Body Model">
+            <div class="circle vikt" data-value="" onclick="showInput('vikt')">
+                <div class="parameter">Vikt (kg):</div>
+                <div class="value" id="vikt-value">-</div>
+                <input type="number" id="vikt-input" placeholder="0" oninput="updateCircle('vikt')" class="hidden-input">
+            </div>
+            <div class="circle längd" data-value="" onclick="showInput('längd')">
+                <div class="parameter">Längd (cm):</div>
+                <div class="value" id="längd-value">-</div>
+                <input type="number" id="längd-input" placeholder="0" oninput="updateCircle('längd')" class="hidden-input">
+            </div>
+            <div class="circle muskelmassa" data-value="" onclick="showInput('muskelmassa')">
+                <div class="parameter">Muskelmassa (%):</div>
+                <div class="value" id="muskelmassa-value">-</div>
+                <input type="number" id="muskelmassa-input" placeholder="0" oninput="updateCircle('muskelmassa')" class="hidden-input">
+            </div>
+            <div class="circle fettprocent" data-value="" onclick="showInput('fettprocent')">
+                <div class="parameter">Fettprocent (%):</div>
+                <div class="value" id="fettprocent-value">-</div>
+                <input type="number" id="fettprocent-input" placeholder="0" oninput="updateCircle('fettprocent')" class="hidden-input">
+            </div>
+            <div class="circle ecw-ratio" data-value="" onclick="showInput('ecw-ratio')">
+                <div class="parameter">ECW Ratio:</div>
+                <div class="value" id="ecw-ratio-value">-</div>
+                <input type="number" id="ecw-ratio-input" placeholder="0" oninput="updateCircle('ecw-ratio')" class="hidden-input">
+            </div>
+            <div class="circle bmi" data-value="" onclick="showInput('bmi')">
+                <div class="parameter">BMI:</div>
+                <div class="value" id="bmi-value">-</div>
+                <input type="number" id="bmi-input" placeholder="0" oninput="updateCircle('bmi')" class="hidden-input">
+            </div>
+            <div class="circle viceralt-fett" data-value="" onclick="showInput('viceralt-fett')">
+                <div class="parameter">Viceralt Fett (cm&sup2;):</div>
+                <div class="value" id="viceralt-fett-value">-</div>
+                <input type="number" id="viceralt-fett-input" placeholder="0" oninput="updateCircle('viceralt-fett')" class="hidden-input">
+            </div>
+        </div>
+    
+       <!-- Right Section: Info Text -->
+<div class="info-container">
+    <div class="text-box">
+        En analys av kroppssammansättning består av ett flertal komponenter och ger en indikation på fysisk hälsa och ger värdefull information om individens metabola status. Analysen är en central del för ett individanpassat upplägg av tränings- och kostprogram. Förutom en analys av fett och muskelmassa analyseras hur mycket fett som omger organen (visceralt fett). Höga nivåer av visceralt fett är en viktig orsak till låggradig inflammation som driver hjärt-kärl sjukdomar.
+    </div>
+
+    <!-- Kommentar Section -->
+    <div class="comment-container">
+        <h3>Tolkning och resultat</h3>
+        <textarea id="kommentar-input" placeholder="Skriv din kommentar här..."></textarea>
+        
+        <!-- Add the "Tolkat av:" label and dropdown -->
+        <div class="tolkat-av-container" style="margin-top: 10px;">
+            <label for="tolkat-av" style="font-size: 1rem; font-weight: bold; color: #333;">Tolkat av:</label>
+            <select id="tolkat-av" style="padding: 10px; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; margin-left: 10px;">
+                <option value="overlakare-per-andersson">Överläkare Per "Pliggen" Andersson</option>
+            </select>
+        </div>
+    </div>     
+
+    <!-- Export Buttons -->
+    <div class="export-container" style="margin-top: 20px;">
+        <button id="export-button">Exportera CSV</button>
+        <button id="export-jpeg-button">Exportera JPEG</button>
+    </div>
+    <div class="footer-logo">
+        <img src="https://i.postimg.cc/FRwbMSBN/SENTION-logo-Black-Transparent-BG.png" alt="Företagslogo">
+    </div>
+</div>
+    
+    
+</body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+
+    
+document.getElementById('export-button').addEventListener('click', () => {
+    const vikt = parseFloat(document.getElementById('vikt-input').value) || 0;
+    const muskelmassaKg = parseFloat(document.getElementById('muskelmassa-input').value) || 0;
+    const muskelmassaProcent = vikt > 0 ? ((muskelmassaKg / vikt) * 100).toFixed(2) : '-';
+
+    // Hämta data från inputfält
+    const name = document.getElementById('nameInput').value || 'Unnamed';
+    const personnummer = document.getElementById('personnummerInput').value || '-';
+    const date = document.getElementById('dateInput').value || new Date().toISOString().split('T')[0];
+    const längd = document.getElementById('längd-input').value || '-';
+    const fettprocent = document.getElementById('fettprocent-input').value || '-';
+    const ecwRatio = document.getElementById('ecw-ratio-input').value || '-';
+    const bmi = document.getElementById('bmi-input').value || '-';
+    const viceraltFett = document.getElementById('viceralt-fett-input').value || '-';
+    const kommentar = document.getElementById('kommentar-input').value || '-'; // Hämta kommentaren
+
+    // Skapa rubriker (rad 1) och data (rad 2)
+    const headers = [
+        'Namn', 'Personnummer', 'Datum', 'Vikt (kg)', 'Längd (cm)', 
+        'Muskelmassa (kg)', 'Muskelmassa (%)', 
+        'Fettprocent (%)', 'ECW Ratio', 'BMI', 'Viceralt Fett', 'Kommentar'
+    ];
+    const values = [
+        name, personnummer, date, vikt || '-', längd, 
+        muskelmassaKg || '-', muskelmassaProcent || '-', 
+        fettprocent, ecwRatio, bmi, viceraltFett, kommentar
+    ];
+
+    // Konvertera till CSV-format
+    const csvContent = `${headers.join(',')}\n${values.join(',')}`;
+
+    // Skapa en Blob och ladda ner filen
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+
+    // Skapa filnamnet med "InBody_Name_Personnummer"
+    const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0]; // YYYY-MM-DD
+    const sanitizedPersonnummer = personnummer.replace(/[^a-zA-Z0-9]/g, ''); // Remove special characters
+    link.href = URL.createObjectURL(blob);
+    link.download = `InBody_${name}_${sanitizedPersonnummer}_${formattedDate}.csv`; // Updated file name format
+    link.click();
+});
+
+// Export JPEG functionality
+document.getElementById('export-jpeg-button').addEventListener('click', () => {
+    const contentToCapture = document.body; // Capture the entire body
+    const exportButtons = document.querySelector('.export-container'); // Select the export buttons container
+    const kommentarTextarea = document.getElementById('kommentar-input'); // Select the "Tolkning och resultat" textarea
+
+    // Temporarily hide the export buttons
+    exportButtons.style.visibility = 'hidden';
+
+    // Replace the "Tolkning och resultat" textarea with a div to preserve multi-line text
+    const kommentarValue = kommentarTextarea.value || kommentarTextarea.placeholder; // Get the value or placeholder
+    const kommentarDiv = document.createElement('div'); // Create a div to replace the textarea
+    kommentarDiv.textContent = kommentarValue; // Set the text content
+    kommentarDiv.style.cssText = `
+        display: block;
+        width: ${kommentarTextarea.offsetWidth}px; /* Match the textarea's width */
+        height: ${kommentarTextarea.offsetHeight}px; /* Match the textarea's height */
+        font-size: ${window.getComputedStyle(kommentarTextarea).fontSize};
+        font-family: ${window.getComputedStyle(kommentarTextarea).fontFamily};
+        text-align: ${window.getComputedStyle(kommentarTextarea).textAlign};
+        line-height: ${window.getComputedStyle(kommentarTextarea).lineHeight};
+        padding: ${window.getComputedStyle(kommentarTextarea).padding};
+        border: ${window.getComputedStyle(kommentarTextarea).border};
+        background: ${window.getComputedStyle(kommentarTextarea).background};
+        color: ${window.getComputedStyle(kommentarTextarea).color};
+        white-space: pre-wrap; /* Preserve multi-line text */
+        overflow-wrap: break-word; /* Break long words */
+        border-radius: ${window.getComputedStyle(kommentarTextarea).borderRadius};
+        box-shadow: ${window.getComputedStyle(kommentarTextarea).boxShadow};
+        box-sizing: border-box; /* Ensure padding and border are included in the width/height */
+        overflow: hidden; /* Prevent text from overflowing */
+    `;
+    kommentarTextarea.style.display = 'none'; // Hide the textarea
+    kommentarTextarea.parentNode.insertBefore(kommentarDiv, kommentarTextarea); // Insert the div before the textarea
+
+    // Get the name and personnummer for the file name
+    const name = document.getElementById('nameInput').value || 'Unnamed';
+    const personnummer = document.getElementById('personnummerInput').value || '-';
+    const sanitizedPersonnummer = personnummer.replace(/[^a-zA-Z0-9]/g, ''); // Remove special characters
+    const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0]; // YYYY-MM-DD
+
+    // Capture the screenshot
+    html2canvas(contentToCapture, { scale: 2, useCORS: true }).then(canvas => {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/jpeg', 1.0); // Save as JPEG
+        link.download = `InBody_${name}_${sanitizedPersonnummer}_${formattedDate}.jpeg`; // File name format
+        link.click();
+
+        // Restore the textarea and export buttons
+        kommentarDiv.remove(); // Remove the div
+        kommentarTextarea.style.display = ''; // Show the textarea again
+        exportButtons.style.visibility = 'visible'; // Make the export buttons visible again
+    });
+});
+
+const parameterRanges = {
+        muskelmassa: { 
+        bad: [0, 23.9], // Under 24% = red
+        moderate: [24, 27], // 24-27% = yellow
+        great: [27.1, 100] // Over 27% = green
+    },
+    fettprocent: { 
+        great: [18, 28], // 18-28% = green
+        moderate: [10, 17.9], // 10-17.9% = yellow
+        moderateHigh: [29, 35], // 29-35% = yellow
+        badLow: [0, 9.9], // Below 10% = red
+        badHigh: [35.1, 100] // Over 35% = red
+    },
+    "ecw-ratio": { 
+        bad: [0.391, 100], // Above 0.390 = red
+        moderate: [0.361, 0.390], // 0.361-0.390 = yellow
+        great: [0, 0.360] // 0.360 or below = green
+    },
+    bmi: { 
+        bad: [0, 18.4], // Under 18.5 = red
+        moderate: [25, 29.9], // 25-29.9 = yellow
+        great: [18.5, 24.9], // 18.5-24.9 = green
+        obese: [30, 100] // 30 or higher = red
+    },
+    "viceralt-fett": { 
+        bad: [100, 1000], // Above 100 cm² = red
+        great: [0, 99.9] // Under 100 cm² = green
+    }
+};
+
+function updateCircle(parameter) {
+    const input = document.getElementById(`${parameter}-input`);
+    const valueSpan = document.getElementById(`${parameter}-value`);
+    const circle = document.querySelector(`.circle.${parameter}`);
+    const value = parseFloat(input.value);
+
+    // Update the displayed value
+    valueSpan.textContent = input.value || '-';
+
+    // Skip color updates for "vikt" and "längd"
+    if (parameter === "vikt" || parameter === "längd") {
+        circle.style.backgroundColor = "rgba(157, 194, 168, 0.8)"; // Default color
+        return;
+    }
+
+    // Determine the color based on the value
+    const ranges = parameterRanges[parameter];
+    if (ranges && !isNaN(value)) {
+        if (parameter === "bmi") {
+            // Special logic for BMI
+            if (value < 18.5) {
+                circle.style.backgroundColor = "rgba(255, 0, 0, 0.53)"; // Undervikt
+            } else if (value >= 18.5 && value <= 24.9) {
+                circle.style.backgroundColor = "rgba(49, 209, 40, 0.53)"; // Normalvikt
+            } else if (value >= 25 && value <= 29.9) {
+                circle.style.backgroundColor = "rgba(209, 207, 40, 0.53)"; // Övervikt
+            } else if (value >= 30) {
+                circle.style.backgroundColor = "rgba(255, 0, 0, 0.53)"; // Fetma
+            } else {
+                circle.style.backgroundColor = "rgba(157, 194, 168, 0.8)"; // Default color
+            }
+        } else if (parameter === "muskelmassa") {
+            // Special logic for Muskelmassa
+            if (value > 24) {
+                circle.style.backgroundColor = "rgba(49, 209, 40, 0.53)";
+            } else if (value >= 24 && value <= 27) {
+                circle.style.backgroundColor = "rgba(209, 207, 40, 0.53)"; 
+            } else if (value < 27,1) {
+                circle.style.backgroundColor = "rgba(255, 0, 0, 0.53)"; 
+            } else {
+                circle.style.backgroundColor = "rgba(157, 194, 168, 0.8)"; 
+            }
+        } else if (parameter === "fettprocent") {
+            // Special logic for Fettprocent
+            if (value >= 18 && value <= 28) {
+                circle.style.backgroundColor = "rgba(49, 209, 40, 0.53)"; // 18-28% (Green)
+            } else if ((value >= 10 && value <= 17.9) || (value > 28 && value <= 35)) {
+                circle.style.backgroundColor = "rgba(209, 207, 40, 0.53)"; // 10-17.9% or 28-35% (Yellow)
+            } else if (value < 10 || value > 35) {
+                circle.style.backgroundColor = "rgba(255, 0, 0, 0.53)"; // Below 10% or over 35% (Red)
+            } else {
+                circle.style.backgroundColor = "rgba(157, 194, 168, 0.8)"; // Default color
+            }
+        } else if (parameter === "ecw-ratio") {
+            // Special logic for ECW Ratio
+            if (value <= 0.359) {
+                circle.style.backgroundColor = "rgba(209, 207, 40, 0.53)"; // 0.360 or below
+            } else if (value > 0.359 && value <= 0.390) {
+                circle.style.backgroundColor = "rgba(49, 209, 40, 0.53)"; // 0.361-0.390
+            } else if (value > 0.390 && value <= 0.399) {
+                circle.style.backgroundColor = "rgba(209, 207, 40, 0.53)"; // Above 0.390
+            } else if (value > 0.399) {
+                circle.style.backgroundColor = "rgba(255, 0, 0, 0.53)"; // Above 0.390
+            } else {
+                circle.style.backgroundColor = "rgba(157, 194, 168, 0.8)"; // Default color
+            }
+        } else if (parameter === "viceralt-fett") {
+            // Special logic for Visceralt Fett
+            if (value < 100) {
+                circle.style.backgroundColor = "rgba(49, 209, 40, 0.53)"; // Under 100 cm²
+            } else if (value >= 100) {
+                circle.style.backgroundColor = "rgba(255, 0, 0, 0.53)"; // 100 cm² or above
+            } else {
+                circle.style.backgroundColor = "rgba(157, 194, 168, 0.8)"; // Default color
+            }
+        } else {
+            // General logic for other parameters
+            if (value >= ranges.bad[0] && value <= ranges.bad[1]) {
+                circle.style.backgroundColor = "red";
+            } else if (value >= ranges.moderate[0] && value <= ranges.moderate[1]) {
+                circle.style.backgroundColor = "orange";
+            } else if (value >= ranges.normal[0] && value <= ranges.normal[1]) {
+                circle.style.backgroundColor = "yellow";
+            } else if (value >= ranges.great[0] && value <= ranges.great[1]) {
+                circle.style.backgroundColor = "green";
+            } else {
+                circle.style.backgroundColor = "rgba(157, 194, 168, 0.8)"; // Default color
+            }
+        }
+    } else {
+        circle.style.backgroundColor = "rgba(157, 194, 168, 0.8)"; // Default color if no ranges are defined or value is invalid
+    }
+
+    if (parameter === "muskelmassa") {
+    const viktValue = parseFloat(document.getElementById("vikt-input").value); // Get Vikt value
+    const muskelmassaValue = parseFloat(input.value); // Get Muskelmassa value
+
+    if (!isNaN(viktValue) && viktValue > 0 && !isNaN(muskelmassaValue)) {
+        const percentage = (muskelmassaValue / viktValue) * 100; // Calculate percentage
+        valueSpan.textContent = `${percentage.toFixed(2)}`; // Update the displayed value
+
+        // Check the calculated percentage against the ranges
+        if (percentage > 27) {
+            circle.style.backgroundColor = "rgba(49, 209, 40, 0.53)"; // Green
+        } else if (percentage >= 24 && percentage <= 27) {
+            circle.style.backgroundColor = "rgba(209, 207, 40, 0.53)"; // Yellow
+        } else if (percentage < 24) {
+            circle.style.backgroundColor = "rgba(255, 0, 0, 0.53)"; // Red
+        } else {
+            circle.style.backgroundColor = "rgba(157, 194, 168, 0.8)"; // Default color
+        }
+    } else {
+        valueSpan.textContent = "-"; // Reset if values are invalid
+        circle.style.backgroundColor = "rgba(157, 194, 168, 0.8)"; // Default color
+    }
+}
+}
+
+document.getElementById("vikt-input").addEventListener("input", () => {
+    updateCircle("muskelmassa");
+});
+
+// Show the input field when a circle is clicked
+function showInput(parameter) {
+    // Hide all other input fields
+    document.querySelectorAll('.hidden-input').forEach(input => {
+        input.style.display = 'none';
+    });
+
+    // Show the input field for the clicked circle
+    const input = document.getElementById(`${parameter}-input`);
+    input.style.display = 'block';
+    input.focus(); // Focus on the input field
+}
+
+// Hide input fields when clicking outside
+document.addEventListener('click', (event) => {
+    const isCircle = event.target.closest('.circle'); // Check if the click is inside a circle
+    if (!isCircle) {
+        document.querySelectorAll('.hidden-input').forEach(input => {
+            input.style.display = 'none'; // Hide all input fields
+        });
+    }
+});
+
+        const nameInput = document.querySelector('input[type="text"]');
+
+    nameInput.addEventListener('input', function () {
+        // Create a temporary span element to measure the text width
+        const tempSpan = document.createElement('span');
+        tempSpan.style.visibility = 'hidden';
+        tempSpan.style.position = 'absolute';
+        tempSpan.style.whiteSpace = 'nowrap';
+        tempSpan.style.fontSize = window.getComputedStyle(this).fontSize;
+        tempSpan.style.fontFamily = window.getComputedStyle(this).fontFamily;
+        tempSpan.textContent = this.value || this.placeholder;
+
+        document.body.appendChild(tempSpan);
+        const newWidth = tempSpan.offsetWidth + 20; // Add some padding
+        this.style.width = `${newWidth}px`;
+        document.body.removeChild(tempSpan);
+    });
+
+    // Auto-expand the "Tolkning och resultat" textarea as the user types
+const kommentarTextarea = document.getElementById('kommentar-input');
+
+kommentarTextarea.addEventListener('input', function () {
+    this.style.height = 'auto'; // Reset the height to calculate the new height
+    this.style.height = `${this.scrollHeight}px`; // Set the height to fit the content
+});
+
+// Initialize the height on page load (in case there's pre-filled content)
+window.addEventListener('load', function () {
+    kommentarTextarea.style.height = 'auto';
+    kommentarTextarea.style.height = `${kommentarTextarea.scrollHeight}px`;
+});
+    </script>
+</body>
+</html>
